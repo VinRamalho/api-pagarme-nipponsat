@@ -11,19 +11,29 @@ const options = {
   data: {
     items:[
        {
-          amount:2990,
+          amount:10,
           description:'Chaveiro do Tesseract',
           quantity:1
        }
     ],
     customer:{
        name:'Tony Stark',
-       email:'tstark@avengers.com'
+       email:'tstark@avengers.com',
+       type: 'individual',
+       document: '01234567890',
+       phones: {
+           home_phone: {
+               country_code: '55',
+               number: '22180513',
+               area_code: '21'
+           },
+      },
     },
+    // expires_in: 60,
     payments:[
        {
           payment_method:'checkout',
-          amount:2000,
+          amount:0,
           checkout: {
             customer_editable : false,
             skip_checkout_success_page: true,
@@ -64,7 +74,7 @@ const options = {
                 type:'threed_secure',
                 threed_secure:{
                   mpi:'acquirer',
-                  success_url:'http://www.pagar.me'
+                  success_url:'htpps://www.nps-solutions.com.br'
                 }
               }
             }
@@ -76,6 +86,7 @@ const options = {
 
 axios.request(options).then(function (response) {
   console.log(response.data);
+  // console.log(response.data);
   console.log('Deu boa')
 }).catch(function (error) {
   console.error(error.response.data);
