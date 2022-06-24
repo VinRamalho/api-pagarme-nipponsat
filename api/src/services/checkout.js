@@ -64,7 +64,7 @@ const options = {
             credit_card: {
                capture: true,
                statement_descriptor: 'rasre',
-               operation_type: 'auth_only'
+               operation_type: 'auth_and_capture'
             },
            debit_card: {
               authentication:{
