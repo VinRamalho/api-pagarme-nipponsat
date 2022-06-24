@@ -1,4 +1,9 @@
 const axios = require("axios").default;
+// const datetime = require('node-datetime');
+// const dt = datetime.create();
+// const formatted = dt.format('d/m/Y H:M:S');
+// const addDay = formatted.offsetInDays(1);
+// console.log(addDay);
 
 const options = {
   method: 'POST',
@@ -33,11 +38,11 @@ const options = {
     payments:[
        {
           payment_method:'checkout',
-          amount:0,
+          amount:10,
           checkout: {
             customer_editable : false,
             skip_checkout_success_page: true,
-            accepted_payment_methods: [ 'credit_card', 'boleto', 'bank_transfer', 'voucher','debit_card'],
+            accepted_payment_methods: [ 'credit_card', 'boleto', 'bank_transfer', 'debit_card', 'pix'],
             accepted_multi_payment_methods: [
                      ['credit_card','credit_card'],
                      ['credit_card','boleto']
@@ -47,13 +52,13 @@ const options = {
               'bank': ['237', '001', '341']
             },
             boleto: {
-              bank: '033',
+              bank: ['033', '001', '104', '237', '341'],
               instructions: 'Pagar até o vencimento',
-              due_at: '2022-07-25T00:00:00Z'
+              due_at: '2022/06/25T09:07:50Z'
           },
             credit_card: {
                capture: true,
-               statement_descriptor: 'Desc na fatura',
+               statement_descriptor: 'Pague a fatura',
                installments: [
                  {
                    number: 1,
@@ -64,9 +69,6 @@ const options = {
                    total: 2500
                  }
               ]
-            },voucher:{
-                 capture: true,
-                 statement_descriptor: 'pagarme'
             },
            debit_card: {
               authentication:{
@@ -77,6 +79,15 @@ const options = {
                   success_url:'https://www.nps-solutions.com.br'
                 }
               }
+            },
+            pix: {
+              expires_in: 1800,
+              additional_information: [
+                  {
+                      name: "Quantidade",
+                      value: "2"
+                  }
+              ]
             }
           }
        }
@@ -93,3 +104,8 @@ axios.request(options).then(function (response) {
 //   console.log(error.request.data.errors);//{ request.data }
   console.log('a Solicitação falhou');
 });
+
+// voucher:{
+//   capture: true,
+//   statement_descriptor: 'pagarme'
+// },

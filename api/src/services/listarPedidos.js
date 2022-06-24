@@ -1,8 +1,14 @@
 const axios = require("axios").default;
+//PARA PEGAR UM PEDIDO USE O METODO 'GET'
+//PARA FECHAR UM PEDIDO USE O METODO 'PATCH':
+//(https://api.pagar.me/core/v5/orders/{ID}/closed) 
+
 
 const options = {
-  method: 'PATCH',
-  url: 'https://api.pagar.me/core/v5/orders/or_lR2rJmQi6XHnRpEg',
+
+  
+  method: 'GET',
+  url: 'https://api.pagar.me/core/v5/orders/',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -13,8 +19,10 @@ const options = {
 axios.request(options).then(function (response) {
     // console.log(response);
   console.log(response.data);
+  console.log('deu boa!');
 }).catch(function (error) {
-  console.error(error);
+  console.error(error.response.data);
+  console.log('deu ruim');
 });
 
-//chk_dDBnQ4xfv2CpGjlE
+//or_MrE1p9xt4FyaYomB
