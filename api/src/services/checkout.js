@@ -58,17 +58,7 @@ const options = {
           },
             credit_card: {
                capture: true,
-               statement_descriptor: 'Pague a fatura',
-               installments: [
-                 {
-                   number: 1,
-                   total: 2000
-                 },
-                 {
-                   number: 2,
-                   total: 2500
-                 }
-              ]
+               statement_descriptor: 'Pague a fatura'
             },
            debit_card: {
               authentication:{

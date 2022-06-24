@@ -1,15 +1,12 @@
-//PARA OBTER TODOS OS CLIENTES USE O METODO 'GET' COM A URL:
-//https://api.pagar.me/core/v5/customers/{ID}
-//PARA EDITAR USE O METODO 'PUT'
+//AQUI É PARA OBTER COBRANÇAS COMO CREDITO, DEBITO E BOLETO
+//URL BASE: https://api.pagar.me/core/v5/charges/
 
 const axios = require("axios").default;
 
 
 const options = {
-
-  
     method: 'GET',
-    url: 'https://api.pagar.me/core/v5/customers/',
+    url: 'https://api.pagar.me/core/v5/charges/ch_7PEypGgsDskpBLz5/',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -17,6 +14,7 @@ const options = {
     },
   };
   
+
   axios.request(options).then(function (response) {
       // console.log(response);
     console.log(response.data);
