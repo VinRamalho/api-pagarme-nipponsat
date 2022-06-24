@@ -22,7 +22,8 @@
     "mjs": "^1.0.0",
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-datetime": "^2.1.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

@@ -14,18 +14,47 @@ const options = {
       document: '11304917908',
       name: 'Tony Stark',
       email: 'avengerstark@ligadajustica.com.br',
-      type: 'individual'
+      type: 'individual',
+      phones: {
+        home_phone: {
+            country_code: '55',
+            number: '22180513',
+            area_code: '21'
+        },
+        mobile_phone: {
+          country_code: '55',
+          area_code: '41',
+          number: '997987818'}
+      }
     },
-    items: [{amount: 2990, description: 'Chaveiro do Tesseract', quantity: 1}],
+    items: [
+      {amount: 2990,
+        code: '1',
+        description: 'Chaveiro do Tesseract',
+        quantity: 1
+      }],
     payments: [
       {
+        payment_method: 'credit_card',
         credit_card: {
-          card: {cvv: '123', number: '4000000000000010',  exp_month: 1, exp_year: 1},
+          recurrence: false,
           installments: 1,
           statement_descriptor: 'AVENGERS',
-          card_id: 'card_oqyg5aZuP2zK1dja'
-        },
-        payment_method: 'credit_card'
+            card: {
+              number: '4000000000000010',
+              holder_name: 'Tony Stark',
+              exp_month: 1,
+              exp_year: 30,
+              cvv: '123',
+              billing_address: {
+                  line_1: '10880, Malibu Point, Malibu Central',
+                  zip_code: '90265',
+                  city: 'Malibu',
+                  state: 'CA',
+                  country: 'US'                
+              }
+          }
+        }
       }
     ]
   }

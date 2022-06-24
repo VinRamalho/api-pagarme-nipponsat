@@ -14,34 +14,39 @@ const options = {
     Authorization: 'Basic c2tfdGVzdF92ZTkzZHdjOExJd2JqMVlWOg=='
   },
   data: {
-    items:[
-       {
-          amount:10,
-          description:'Chaveiro do Tesseract',
-          quantity:1
-       }
+    items: [
+      {amount: 2990,
+        code: '1',
+        description: 'Chaveiro do Tesseract',
+        quantity: 1
+      }
     ],
-    customer:{
-       name:'Tony Stark',
-       email:'tstark@avengers.com',
-       type: 'individual',
-       document: '01234567890',
-       phones: {
-           home_phone: {
-               country_code: '55',
-               number: '22180513',
-               area_code: '21'
-           },
-      },
+    customer: {
+      code: 'null',
+      document: '11304917908',
+      name: 'Tony Stark',
+      email: 'avengerstark@ligadajustica.com.br',
+      type: 'individual',
+      phones: {
+        home_phone: {
+            country_code: '55',
+            number: '22180513',
+            area_code: '21'
+        },
+        mobile_phone: {
+          country_code: '55',
+          area_code: '41',
+          number: '997987818'}
+      }
     },
     // expires_in: 60,
     payments:[
        {
           payment_method:'checkout',
-          amount:10,
+          amount:2990,
           checkout: {
             customer_editable : false,
-            skip_checkout_success_page: true,
+            skip_checkout_success_page: false,
             accepted_payment_methods: [ 'credit_card', 'boleto', 'bank_transfer', 'debit_card', 'pix'],
             accepted_multi_payment_methods: [
                      ['credit_card','credit_card'],
@@ -58,7 +63,8 @@ const options = {
           },
             credit_card: {
                capture: true,
-               statement_descriptor: 'Pague a fatura'
+               statement_descriptor: 'rasre',
+               operation_type: 'auth_only'
             },
            debit_card: {
               authentication:{
@@ -87,12 +93,14 @@ const options = {
 
 axios.request(options).then(function (response) {
   console.log(response.data);
-  // console.log(response.data);
+  // const urlSucesso = response.data.checkouts;
+  // console.log(urlSucesso);
   console.log('Deu boa')
 }).catch(function (error) {
+  // console.error(error.response.data);
   console.error(error.response.data);
 //   console.log(error.request.data.errors);//{ request.data }
-  console.log('a Solicitação falhou');
+  console.log('deu ruim');
 });
 
 // voucher:{

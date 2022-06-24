@@ -2117,6 +2117,11 @@
   "resolved" "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz"
   "version" "1.1.0"
 
+"node-datetime@^2.1.2":
+  "integrity" "sha512-eev1F0IPKSu3zvASMtH8ic4znGpfXdq9yc8yc/EVx6bk57u7bS2iZKVZ8ll1ZeH/IEQ3qFb04FB70PCNXSIp4w=="
+  "resolved" "https://registry.npmjs.org/node-datetime/-/node-datetime-2.1.2.tgz"
+  "version" "2.1.2"
+
 "node-fetch-h2@^2.3.0":
   "integrity" "sha512-ofRW94Ab0T4AOh5Fk8t0h8OBWrmjb0SSB20xh1H8YnPV9EJ+f5AMoYSUQ2zgJ4Iq2HAK0I2l5/Nequ8YzFS3Hg=="
   "resolved" "https://registry.npmjs.org/node-fetch-h2/-/node-fetch-h2-2.3.0.tgz"

@@ -6,7 +6,7 @@ const axios = require("axios").default;
 
 const options = {
     method: 'GET',
-    url: 'https://api.pagar.me/core/v5/charges/ch_7PEypGgsDskpBLz5/',
+    url: 'https://api.pagar.me/core/v5/charges/ch_oAPxAPEuprs8Odpy',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -16,8 +16,8 @@ const options = {
   
 
   axios.request(options).then(function (response) {
-      // console.log(response);
     console.log(response.data);
+    console.log(response.data.last_transaction.gateway_response);
     console.log('deu boa!');
   }).catch(function (error) {
     console.error(error.response.data);
