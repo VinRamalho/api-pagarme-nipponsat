@@ -42,7 +42,7 @@ const options = {
                      ['credit_card','credit_card'],
                      ['credit_card','boleto']
                      ],
-            success_url: 'htpps://www.nps-solutions.com.br',
+            success_url: 'https://www.nps-solutions.com.br',
             bank_transfer: {
               'bank': ['237', '001', '341']
             },
@@ -74,7 +74,7 @@ const options = {
                 type:'threed_secure',
                 threed_secure:{
                   mpi:'acquirer',
-                  success_url:'htpps://www.nps-solutions.com.br'
+                  success_url:'https://www.nps-solutions.com.br'
                 }
               }
             }
