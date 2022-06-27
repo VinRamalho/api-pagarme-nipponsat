@@ -54,12 +54,12 @@ const options = {
                      ],
             success_url: 'https://www.nps-solutions.com.br',
             bank_transfer: {
-              'bank': ['237', '001', '341']
+              bank: ['237', '001', '341']
             },
             boleto: {
               bank: ['033', '001', '104', '237', '341'],
               instructions: 'Pagar até o vencimento',
-              due_at: '2022/06/25T09:07:50Z'
+              due_at: '2022/06/28T09:07:50Z'
           },
             credit_card: {
                capture: true,
