@@ -92,7 +92,7 @@ const options = {
 };
 
 axios.request(options).then(function (response) {
-  console.log(response.data);
+  console.log(response.data.checkouts);
   // const urlSucesso = response.data.checkouts;
   // console.log(urlSucesso);
   console.log('Deu boa')

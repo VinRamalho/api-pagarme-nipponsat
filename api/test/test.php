@@ -11,47 +11,51 @@ curl_setopt_array($curl, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => "
-  {\"items\":[{
+  {
+    \"items\":[{
       \"amount\":2200,
       \"description\":\"rastreador\",
       \"quantity\":1,
-      \"code\":\"1\"}],
+      \"code\":\"1\"
+    }],
     \"customer\":{
-        \"code\":\"null\",
-        \"document\":\"113044917908\",
-        \"phones\":{
-          \"home_phone\":{
-            \"country_code\":\"55\",
-            \"area_code\":\"21\",
-            \"number\":\"22180513\"},
-          \"mobile_phone\":{
-            \"country_code\":\"55\",
-            \"area_code\":\"41\",
-            \"number\":\"997987818\"}},
-          \"name\":\"Josevaldo\",
+        \"code\":\"1\",
+        \"document\":\"11111111111\",
+        \"address\":{
+          \"country\":\"BR\",
+          \"state\":\"PR\",
+          \"city\":\"Curitiba\",
+          \"zip_code\":\"81570170\",
+          \"line_1\":\"4, Machado de assis, Uberaba\",
+          \"line_2\":\"casa\"
+          },
+          \"name\":\"Francisco\",
           \"type\":\"individual\",
           \"email\":\"test@test.com\",
-          \"document_type\":\"CPF\"},
+          \"document_type\":\"CPF\"
+      },
           \"payments\":[{
+            \"payment_method\":\"checkout\",
               \"checkout\":{
-              \"accepted_payment_methods\":[
-                \"credit_card\",
-                \"boleto\",
-                \"bank_transfer\",
-                \"debit_card\",
-                \"pix\"],
+              \"accepted_payment_methods\":[\"credit_card\",\"boleto\",\"bank_transfer\",\"debit_card\",\"pix\"],
                 \"customer_editable\":\"false\",
             \"boleto\":{
-                \"bank\":[
-                  \"033\",
-                  \"001\",
-                  \"104\",
-                  \"237\",
-                  \"341\"],
-            \"due_at\":
-            \"2022/06/28T09:07:50Z\"}},
-            \"payment_method\":
-            \"checkout\"}]}",
+              \"due_at\":\"2022/06/28T09:07:50Z\"
+            },
+          \"success_url\":\"https://www.nps-solutions.com.br\",
+          \"debit_card\":{
+            \"authentication\":{
+              \"statement_descriptor\":\"Desc na fatura\",
+              \"type\":\"threed_secure\",
+              \"threed_secure\":{
+                \"mpi\":\"acquirer\",
+                \"success_url\":\"https://www.nps-solutions.com.br\"}}},
+          \"bank_transfer\":{\"bank\":[\"033\",\"001\",\"104\",\"237\",\"341\"]},
+          \"credit_card\":{
+            \"capture\":\"true\",
+            \"operation_type\":\"auth_and_capture\"}
+          }}]
+  }",
   CURLOPT_HTTPHEADER => [
     "Accept: application/json",
     "Authorization: Basic c2tfdGVzdF92ZTkzZHdjOExJd2JqMVlWOg==",
