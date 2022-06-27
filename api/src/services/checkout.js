@@ -57,14 +57,17 @@ const options = {
               bank: ['237', '001', '341']
             },
             boleto: {
-              bank: ['033', '001', '104', '237', '341'],
               instructions: 'Pagar até o vencimento',
               due_at: '2022/06/28T09:07:50Z'
           },
             credit_card: {
                capture: true,
                statement_descriptor: 'rasre',
-               operation_type: 'auth_and_capture'
+               operation_type: 'auth_and_capture',
+               threed_secure:{
+                mpi:'acquirer',
+                redirect_url:'https://www.nps-solutions.com.br'
+              }
             },
            debit_card: {
               authentication:{
@@ -92,7 +95,7 @@ const options = {
 };
 
 axios.request(options).then(function (response) {
-  console.log(response.data.checkouts);
+  console.log(response.data);
   // const urlSucesso = response.data.checkouts;
   // console.log(urlSucesso);
   console.log('Deu boa')

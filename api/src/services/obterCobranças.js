@@ -6,7 +6,7 @@ const axios = require("axios").default;
 
 const options = {
     method: 'GET',
-    url: 'https://api.pagar.me/core/v5/charges/ch_oAPxAPEuprs8Odpy',
+    url: 'https://api.pagar.me/core/v5/charges/ch_bAX7ROMcxzI4jZad',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',

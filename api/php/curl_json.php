@@ -53,7 +53,9 @@ curl_setopt_array($curl, [
           \"bank_transfer\":{\"bank\":[\"033\",\"001\",\"104\",\"237\",\"341\"]},
           \"credit_card\":{
             \"capture\":\"true\",
-            \"operation_type\":\"auth_and_capture\"}
+            \"operation_type\":\"auth_and_capture\",
+            \"statement_descriptor\":\"rastreador\"
+          }
           }}]
   }",
   CURLOPT_HTTPHEADER => [
