@@ -32,7 +32,13 @@ curl_setopt_array($curl, [
           \"name\":\"Francisco\",
           \"type\":\"individual\",
           \"email\":\"test@test.com\",
-          \"document_type\":\"CPF\"
+          \"document_type\":\"CPF\",
+          \"phones\":{
+            \"mobile_phone\":{
+              \"country_code\":\"55\",
+              \"area_code\":\"21\",
+              \"number\":\"000000000\"
+            }}
       },
           \"payments\":[{
             \"payment_method\":\"checkout\",

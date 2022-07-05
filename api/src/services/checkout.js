@@ -15,7 +15,7 @@ const options = {
   },
   data: {
     items: [
-      {amount: 2990,
+      {amount: 40000,
         code: '1',
         description: 'Chaveiro do Tesseract',
         quantity: 1
@@ -43,23 +43,12 @@ const options = {
     payments:[
        {
           payment_method:'checkout',
-          amount:2990,
+          amount: 40000,
           checkout: {
             customer_editable : false,
             skip_checkout_success_page: false,
-            accepted_payment_methods: [ 'credit_card', 'boleto', 'bank_transfer', 'debit_card', 'pix'],
-            accepted_multi_payment_methods: [
-                     ['credit_card','credit_card'],
-                     ['credit_card','boleto']
-                     ],
+            accepted_payment_methods: [ 'credit_card', 'pix'],
             success_url: 'https://www.nps-solutions.com.br',
-            bank_transfer: {
-              bank: ['237', '001', '341']
-            },
-            boleto: {
-              instructions: 'Pagar até o vencimento',
-              due_at: '2022/06/28T09:07:50Z'
-          },
             credit_card: {
                capture: true,
                statement_descriptor: 'rasre',
@@ -67,16 +56,6 @@ const options = {
                threed_secure:{
                 mpi:'acquirer',
                 redirect_url:'https://www.nps-solutions.com.br'
-              }
-            },
-           debit_card: {
-              authentication:{
-                statement_descriptor: 'Desc na fatura',
-                type:'threed_secure',
-                threed_secure:{
-                  mpi:'acquirer',
-                  success_url:'https://www.nps-solutions.com.br'
-                }
               }
             },
             pix: {
